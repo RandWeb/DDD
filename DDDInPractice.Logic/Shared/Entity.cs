@@ -7,8 +7,8 @@ public abstract class Entity
     {
         var other = obj as Entity;
 
-        if (ReferenceEquals(other, null))
-            return false;
+        if (ReferenceEquals(other, null)) return false;
+
         if (ReferenceEquals(other, this)) return true;
 
         if (GetType() != other.GetType()) return false;

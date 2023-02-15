@@ -1,7 +1,4 @@
-﻿using System.Net.Http.Headers;
-
-namespace DDDInPractice.Logic.Shared;
-
+﻿namespace DDDInPractice.Logic.Shared;
 public abstract class ValueObject<T> where T : ValueObject<T>
 {
     public override bool Equals(object? obj)

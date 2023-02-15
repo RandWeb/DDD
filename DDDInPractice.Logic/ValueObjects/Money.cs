@@ -17,16 +17,34 @@ public class Money : ValueObject<Money>
         OneDollarCount = oneDollarCount;
         FiveDollarCount = fiveDollarCount;
         TwentyDollarCount = twentyDollarCount;
+
         this.Validate();
     }
 
-    public static Money Empty() => new Money(0, 0, 0, 0, 0, 0);
+    public static Money Empty => new(0, 0, 0, 0, 0, 0);
+
+    public static Money OneCent => new(1, 0, 0, 0, 0, 0);
+
+    public static Money TenCent => new(0, 1, 0, 0, 0, 0);
+
+    public static Money Quarter => new(0, 0, 1, 0, 0, 0);
+
+    public static Money OneDollar => new(0, 0, 0, 1, 0, 0);
+
+    public static Money FiveDollar => new(0, 0, 0, 0, 1, 0);
+
+    public static Money TwentyDollar => new(0, 0, 0, 0, 0, 1);
 
     public int OneCentCount { get; private set; }
+
     public int TenCentCount { get; private set; }
+
     public int QuarterCount { get; private set; }
+
     public int OneDollarCount { get; private set; }
+
     public int FiveDollarCount { get; private set; }
+
     public int TwentyDollarCount { get; private set; }
 
     public static Money operator +(Money moneyOne, Money moneyTwo)
