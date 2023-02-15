@@ -1,7 +1,8 @@
-﻿using DDDInPractice.Logic.ValueObjects;
+﻿using DDDInPractice.Logic.Shared;
+using DDDInPractice.Logic.ValueObjects;
 
 namespace DDDInPractice.Logic;
-public sealed class SnackMachine
+public class SnackMachine : Entity
 {
     public Money MoneyInside { get; private set; }
     public Money MoneyInTransction { get; private set; }
