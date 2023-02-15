@@ -17,6 +17,7 @@ public class Money : ValueObject<Money>
         OneDollarCount = oneDollarCount;
         FiveDollarCount = fiveDollarCount;
         TwentyDollarCount = twentyDollarCount;
+        this.Validate();
     }
 
     public int OneCentCount { get; private set; }
@@ -61,4 +62,18 @@ public class Money : ValueObject<Money>
         }
     }
 
+    protected override void Validate()
+    {
+        if (OneCentCount < 0) throw new InvalidOperationException();
+
+        if (TenCentCount < 0) throw new InvalidOperationException();
+
+        if (QuarterCount < 0) throw new InvalidOperationException();
+
+        if (OneDollarCount < 0) throw new InvalidOperationException();
+
+        if (FiveDollarCount < 0) throw new InvalidOperationException();
+
+        if (TwentyDollarCount < 0) throw new InvalidOperationException();
+    }
 }
