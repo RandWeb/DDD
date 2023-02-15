@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DDDInPractice", "DDDInPractice", "{B5D0A012-BDF4-4D48-8F8A-9B26097FFEA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDInPractice.Logic", "DDDInPractice.Logic\DDDInPractice.Logic.csproj", "{A80AC1EC-AC98-4FFA-ADA1-A0D3CEFD8705}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A80AC1EC-AC98-4FFA-ADA1-A0D3CEFD8705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A80AC1EC-AC98-4FFA-ADA1-A0D3CEFD8705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A80AC1EC-AC98-4FFA-ADA1-A0D3CEFD8705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A80AC1EC-AC98-4FFA-ADA1-A0D3CEFD8705}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A80AC1EC-AC98-4FFA-ADA1-A0D3CEFD8705} = {B5D0A012-BDF4-4D48-8F8A-9B26097FFEA8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5DEE7F1-2723-42E3-9F2E-5E010E1F2C6C}
+	EndGlobalSection
+EndGlobal
