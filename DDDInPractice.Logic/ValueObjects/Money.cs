@@ -20,6 +20,8 @@ public class Money : ValueObject<Money>
         this.Validate();
     }
 
+    public static Money Empty() => new Money(0, 0, 0, 0, 0, 0);
+
     public int OneCentCount { get; private set; }
     public int TenCentCount { get; private set; }
     public int QuarterCount { get; private set; }
@@ -37,6 +39,26 @@ public class Money : ValueObject<Money>
                         moneyOne.FiveDollarCount + moneyTwo.FiveDollarCount,
                         moneyOne.TwentyDollarCount + moneyTwo.TwentyDollarCount);
     }
+
+    public static Money operator -(Money moneyOne, Money moneyTwo)
+    {
+        return new Money(
+                        moneyOne.OneCentCount - moneyTwo.OneCentCount,
+                        moneyOne.TenCentCount - moneyTwo.TenCentCount,
+                        moneyOne.QuarterCount - moneyTwo.QuarterCount,
+                        moneyOne.OneDollarCount - moneyTwo.OneDollarCount,
+                        moneyOne.FiveDollarCount - moneyTwo.FiveDollarCount,
+                        moneyOne.TwentyDollarCount - moneyTwo.TwentyDollarCount);
+    }
+
+
+
+    public decimal Amount => OneCentCount * 0.01m
+                            + TenCentCount * 0.10m
+                            + QuarterCount * 0.25m
+                            + OneDollarCount
+                            + FiveDollarCount * 5
+                            + TwentyDollarCount * 20;
 
     protected override bool EqualsCore(Money other)
     {
