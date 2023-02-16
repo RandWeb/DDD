@@ -4,6 +4,18 @@ using static DDDInPractice.Logic.ValueObjects.Money;
 namespace DDDInPractice.Logic;
 public class SnackMachine : Entity
 {
+    public SnackMachine()
+    {
+        MoneyInside = Empty;
+        MoneyInTransction = Empty;
+
+        Slots = new List<Slot> {
+        new Slot(this,null,1,0m,0),
+        new Slot(this,null,2,0m,0),
+        new Slot(this,null,3,0m,0),
+        };
+    }
+
     public Money MoneyInside { get; private set; } = Empty;
 
     public Money MoneyInTransction { get; private set; } = Empty;
@@ -20,6 +32,8 @@ public class SnackMachine : Entity
 
     public int TwentyDollarCountInTransaction { get; private set; }
 
+    public IList<Slot> Slots { get; protected set; } = new List<Slot>();
+
     public void AddMoeny(Money money)
     {
         var coins = new[] { OneCent, TenCent, Quarter, OneDollar, FiveDollar, TwentyDollar };
@@ -34,10 +48,22 @@ public class SnackMachine : Entity
         MoneyInTransction = Empty;
     }
 
-    public void BuySnack()
+    public void BuySnack(int position)
     {
+        Slot slot = Slots.Single(x => x.Position == position);
+        slot.Quantity--;
+
         MoneyInside += MoneyInTransction;
 
         MoneyInTransction = Empty;
+    }
+
+    public void LoadSnacks(int position, Snack snack, int quantity, decimal price)
+    {
+        Slot slot = Slots.Single(x => x.Position == position);
+
+        slot.Snack = snack;
+        slot.Quantity = quantity;
+        slot.Price = price;
     }
 }

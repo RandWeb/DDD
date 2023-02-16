@@ -49,11 +49,28 @@ public class SnackMachineSpecs
 
         snackMachine.AddMoeny(OneDollar);
 
-        snackMachine.BuySnack();
+        snackMachine.BuySnack(1);
 
         Assert.AreEqual(snackMachine.MoneyInTransction, Empty);
 
         Assert.AreEqual(snackMachine.MoneyInside.Amount, 2m);
+    }
+
+    [TestMethod]
+    public void BuySnack_trades_inserted_money_for_a_snack()
+    {
+        var snackMachine = new SnackMachine();
+
+        snackMachine.LoadSnacks(1, new Snack("Some snack"), 10, 1m);
+
+        snackMachine.AddMoeny(OneDollar);
+
+        snackMachine.BuySnack(1);
+
+        Assert.AreEqual(snackMachine.MoneyInTransction, Empty);
+        Assert.AreEqual(snackMachine.MoneyInside.Amount, 1m);
+
+        Assert.AreEqual(snackMachine.Slots.Single(x => x.Position == 1).Quantity, 9);
     }
 }
 
