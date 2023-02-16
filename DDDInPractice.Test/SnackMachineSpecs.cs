@@ -12,7 +12,7 @@ public class SnackMachineSpecs
 
         snackMachine.AddMoeny(OneDollar);
 
-        snackMachine.ReturnMony();
+        snackMachine.ReturnMoney();
 
         Assert.AreEqual(snackMachine.MoneyInTransction.Amount, 0m);
     }

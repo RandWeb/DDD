@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DDDInPractice", "DDDInPract
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDDInPractice.Logic", "DDDInPractice.Logic\DDDInPractice.Logic.csproj", "{A80AC1EC-AC98-4FFA-ADA1-A0D3CEFD8705}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDInPractice.Test", "DDDInPractice.Test\DDDInPractice.Test.csproj", "{EF9DEEA5-B6BD-4D2C-A4BD-4434908F1576}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDDInPractice.Test", "DDDInPractice.Test\DDDInPractice.Test.csproj", "{EF9DEEA5-B6BD-4D2C-A4BD-4434908F1576}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

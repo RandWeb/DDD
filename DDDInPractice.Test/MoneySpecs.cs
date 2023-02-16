@@ -133,4 +133,26 @@ public class MoneySpecs
         //Assert
         Assert.ThrowsException<InvalidOperationException>(action);
     }
+
+    [DataTestMethod]
+    [DataRow(1, 0, 0, 0, 0, 0, "¢1")]
+    [DataRow(1, 2, 0, 0, 0, 0, "¢21")]
+    public void To_string_should_return_amount_of_money(
+                                            int oneCentCount,
+                                            int tenCentCount,
+                                            int quarterCount,
+                                            int oneDollarCount,
+                                            int fiveDollarCount,
+                                            int twentyDollarCount,
+                                            string excpectedAmount)
+    {
+        var money = new Money(
+                                        oneCentCount,
+                                        tenCentCount,
+                                        quarterCount,
+                                        oneDollarCount,
+                                        fiveDollarCount,
+                                        twentyDollarCount);
+        Assert.AreEqual(money.ToString(), excpectedAmount);
+    }
 }

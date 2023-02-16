@@ -29,7 +29,7 @@ public class SnackMachine : Entity
         MoneyInTransction += money;
     }
 
-    public void ReturnMony()
+    public void ReturnMoney()
     {
         MoneyInTransction = Empty;
     }

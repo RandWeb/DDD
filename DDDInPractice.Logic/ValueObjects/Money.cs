@@ -116,4 +116,12 @@ public class Money : ValueObject<Money>
 
         if (TwentyDollarCount < 0) throw new InvalidOperationException();
     }
+
+    public override string ToString()
+    {
+        if (Amount < 1)
+            return "¢" + (Amount * 100).ToString("0");
+
+        return "$" + Amount.ToString("0.00");
+    }
 }
